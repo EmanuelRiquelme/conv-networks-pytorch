@@ -48,4 +48,3 @@ if __name__ == "__main__":
     components = conv_components()
     print(f'kernel:\n{components.kernel}')
     components.visualize()
-    print(components.stride())
