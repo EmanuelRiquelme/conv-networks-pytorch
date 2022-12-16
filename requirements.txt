@@ -3,5 +3,5 @@ numpy==1.23.4
 Pillow==9.3.0
 scikit_image==0.19.3
 scipy==1.9.3
-skimage==0.0
+scikit-image
 torch==1.12.1
