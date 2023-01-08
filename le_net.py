@@ -10,18 +10,17 @@ class LeNet(nn.Module):
         self.fc1 = nn.Linear(400,120)
         self.fc2 = nn.Linear(120,84)
         self.fc3 = nn.Linear(84,10)
-        self.softmax = torch.nn.Softmax(dim=-1)
 
     def forward(self,img):
         img = self.layer1(img)
+        img = self.relu(img)
         img = self.maxpool(img)
         img = self.layer2(img)
+        img = self.relu(img)
         img = self.maxpool(img).reshape(-1,400)
         img = self.fc1(img)
+        img = self.relu(img)
         img = self.fc2(img)
+        img = self.relu(img)
         img = self.fc3(img)
-        return self.softmax(img) 
-
-if __name__ == '__main__':
-    net = LeNet()
-    print(net(torch.rand([1,28,28])))
+        return img
