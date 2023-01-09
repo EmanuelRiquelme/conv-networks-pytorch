@@ -9,7 +9,7 @@ class LeNet(nn.Module):
         self.layer2 = torch.nn.Conv2d(in_channels = 6,out_channels = 16, kernel_size = (5,5))
         self.fc1 = nn.Linear(400,120)
         self.fc2 = nn.Linear(120,84)
-        self.fc3 = nn.Linear(84,10)
+        self.fc3 = nn.Linear(84,num_classes)
 
     def forward(self,img):
         img = self.layer1(img)
