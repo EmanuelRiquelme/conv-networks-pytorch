@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 class LeNet(nn.Module):
-    def __init__(self,num_clases = 3):
+    def __init__(self,num_classes = 3):
         super(LeNet, self).__init__()
         self.layer1 = torch.nn.Conv2d(in_channels = 1, out_channels = 6,kernel_size = 5 , stride=1, padding=2)
         self.relu = torch.nn.ReLU()
